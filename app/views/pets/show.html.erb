@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+  <li> <%= link_to @pet.user.name, user_path(@pet.user) %></li>
+  <li class="active"	> <%= link_to @pet.name, user_pet_path(@pet.user, @pet) %></li>
+</ul>
+<h1><i class="fa fa-bug"></i> <%= @pet.name %></h1>
+<p><i class="fa fa-book"></i> <%= @pet.bio %></p>
+
+

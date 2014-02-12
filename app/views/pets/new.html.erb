@@ -1,0 +1,8 @@
+<h1>Pets#new</h1>
+
+<%= form_for @pet, url: user_pets_path(@user)  do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :bio, size: "60x12" %>
+  <%= f.submit "Create" %>
+<% end %>
+

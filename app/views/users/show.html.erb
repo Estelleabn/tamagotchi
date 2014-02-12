@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#"><%= @user.name %></a></li>
+  <li><%= link_to @pet.name, user_pet_path(@user, @pet) %></li>
+</ul>
+<h2>Name : <%= @user.name %></h2>
+
+<h2>Email : <%= @user.email %></h2>
+
+<h2>Pet : <%= link_to @pet.name, user_pet_path(@user, @pet) %></h2>
