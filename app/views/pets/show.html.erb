@@ -2,7 +2,23 @@
   <li> <%= link_to @pet.user.name, user_path(@pet.user) %></li>
   <li class="active"	> <%= link_to @pet.name, user_pet_path(@pet.user, @pet) %></li>
 </ul>
-<h1><i class="fa fa-bug"></i> <%= @pet.name %></h1>
+
+<center><h1><i class="fa fa-bug"></i> <%= @pet.name %> - <%= @user.name %>'s Tamagotchi</h1></center>
+
 <p><i class="fa fa-book"></i> <%= @pet.bio %></p>
+
+<p><%= rating(@pet.rating) if !@pet.rating.nil? %> 
+ </p>
+
+<% if @pet.user == current_user %>
+<p><%= link_to edit_pet_path(@pet), class: "btn btn-warning" do %>
+	<i class="fa fa-pencil"></i> Edit
+	<%end %>
+
+  <%= link_to pet_path(@pet), method: :delete, data: { confirm: "Do you really want to delete this sweet little pet ?" }, class: "btn btn-danger" do %>
+  <i class="fa fa-trash-o"></i> Delete
+  <% end %>
+</p>
+<% end %>
 
 

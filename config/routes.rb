@@ -1,9 +1,12 @@
 Tamagotchi::Application.routes.draw do
   
   
+  devise_for :users
   resources :users do
-    resources :pets
+    resources :pets, only: [:index, :show]
   end
+
+  resources :pets, except: [:index, :show]
 
   root 'pages#home'
 
